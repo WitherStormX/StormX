@@ -35,7 +35,7 @@ export default {
     const amount = interaction.options.getInteger("amount");
     const channel = interaction.channel;
 
-    if (amount < 1 || amount > 100)
+    if (amount < 1 || amount > 10000)
       return await replyUserError(interaction, { type: ErrorTypes.VALIDATION, message: 'Please specify a number between 1 and 100.' });
 
     try {
