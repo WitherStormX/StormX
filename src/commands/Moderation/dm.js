@@ -91,7 +91,7 @@ export default {
             await dmChannel.send({
                 embeds: [
                     successEmbed(
-                        Hometowm
+                        anonymous
                             ? "WitherStorm's anonymous"
                             : `Message from ${interaction.user.tag}`,
                         sanitized
