@@ -25,8 +25,8 @@ export default {
         )
         .addBooleanOption(option =>
             option
-                .setName("hometown")
-                .setDescription("Send the message hometownly")
+                .setName("anonymous")
+                .setDescription("Send the message anonymously")
                 .setRequired(false)
         )
         .setDMPermission(false),
@@ -59,7 +59,7 @@ export default {
 
         const targetUser = interaction.options.getUser("user");
         const message = interaction.options.getString("message");
-        const hometown = interaction.options.getBoolean("hometown") || false;
+        const anonymous = interaction.options.getBoolean("anonymous") || false;
 
         try {
             if (message.length > 2000) {
@@ -92,7 +92,7 @@ export default {
                 embeds: [
                     successEmbed(
                         Hometowm
-                            ? "WitherStorm's Hometown"
+                            ? "WitherStorm's anonymous"
                             : `Message from ${interaction.user.tag}`,
                         sanitized
                     ).setFooter({
@@ -108,11 +108,11 @@ export default {
                     action: "DM Sent",
                     target: `${targetUser.tag} (${targetUser.id})`,
                     executor: `${interaction.user.tag} (${interaction.user.id})`,
-                    reason: `hometown: ${hometown ? "Yes" : "No"}`,
+                    reason: `anonymous: ${anonymous ? "Yes" : "No"}`,
                     metadata: {
                         userId: targetUser.id,
                         moderatorId: interaction.user.id,
-                        hometown,
+                        anonymous,
                         messageLength: sanitized.length
                     }
                 }
