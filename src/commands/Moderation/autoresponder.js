@@ -1,9 +1,5 @@
 import { Events } from 'discord.js';
 
-const AUTO_RESPONSES = {
-    "texture pack": "Check the latest texture pack in <#1520081010056757318>!",
-    };
-
 export default {
     name: Events.MessageCreate,
 
@@ -12,13 +8,10 @@ export default {
 
         const content = message.content.toLowerCase();
 
-        for (const trigger in AUTO_RESPONSES) {
-            if (content.includes(trigger.toLowerCase())) {
-                await message.reply({
-                    content: AUTO_RESPONSES[trigger]
-                });
-                break;
-            }
+        if (content === "!texturepack" || content === "!texture pack") {
+            return message.reply({
+                content: "📦 You can find the latest texture pack here: <#1520081010056757318>"
+            });
         }
     }
 };
