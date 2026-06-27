@@ -1,8 +1,8 @@
 import { Events } from 'discord.js';
 
 const AUTO_RESPONSES = {
-    "texture pack": "<#1520081010056757318>"
-};
+    "texture pack": "Check the latest texture pack in <#1520081010056757318>!",
+    };
 
 export default {
     name: Events.MessageCreate,
