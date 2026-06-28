@@ -92,7 +92,7 @@ export default {
                 embeds: [
                     successEmbed(
                         anonymous
-                            ? "WitherStorm's anonymous"
+                            ? "WitherStorm's Hometown"
                             : `Message from ${interaction.user.tag}`,
                         sanitized
                     ).setFooter({
